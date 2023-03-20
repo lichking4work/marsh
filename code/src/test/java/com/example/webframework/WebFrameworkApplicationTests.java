@@ -14,7 +14,7 @@ public class WebFrameworkApplicationTests {
 
 	@Test
 	public void testWelcome() {
-		assertEquals(HttpStatus.OK, new WebFrameworkApplication().welcome().getStatusCode());
+		assertEquals(HttpStatus.OK, new WebFrameworkApplication().lichking().getStatusCode());
 	}
 
 }

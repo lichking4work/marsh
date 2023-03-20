@@ -19,8 +19,8 @@ public class WebFrameworkApplication {
         SpringApplication.run(WebFrameworkApplication.class, args);
     }
 
-    @GetMapping("/")
-    public ResponseEntity<String> welcome() {
+    @GetMapping("/lichking")
+    public ResponseEntity<String> lichking() {
         String welcome = "<html xmlns=\"http://www.w3.org/1999/xhtml\"" +
                 "<head>" +
                 "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"/>" +
@@ -30,7 +30,7 @@ public class WebFrameworkApplication {
                 "<body>" +
                 "<div class=\"website\">" +
                 "<div class=\"ri-t\">" +
-                "<h1>Devsapp</h1>" +
+                "<h1>Lichking</h1>" +
                 "<h2>这是一个 Spring Boot 项目</h2>" +
                 "<span>自豪的通过Serverless Devs进行部署</span>" +
                 "<br/><p>您也可以快速体验： <br/>" +
@@ -42,17 +42,4 @@ public class WebFrameworkApplication {
         return new ResponseEntity<>(welcome, HttpStatus.OK);
     }
 
-    @GetMapping("/fcheaders")
-    public ResponseEntity<Map<String, String>> listHeaders(
-            @RequestHeader Map<String, String> headers) {
-        Map<String, String> fcHeaders = new HashMap<>();
-        headers.forEach((key, value) -> {
-            if (key.startsWith("x-fc")) {
-                fcHeaders.put(key, value);
-            }
-
-        });
-
-        return new ResponseEntity<>(fcHeaders, HttpStatus.OK);
-    }
 }
